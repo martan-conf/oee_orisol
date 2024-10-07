@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acompanhamento de Produção - Orisol</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Acompanhamento de Produção - Máquinas Orisol</h1>
+    </header>
+
+    <section id="filtros">
+        <h2>Filtros</h2>
+        <form id="filterForm">
+            <div class="filters">
+                <select id="dia">
+                    <option value="">Dia</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <!-- Adicione mais opções conforme necessário -->
+                </select>
+                <select id="mes">
+                    <option value="">Mês</option>
+                    <option value="1">Janeiro</option>
+                    <option value="2">Fevereiro</option>
+                    <option value="3">Março</option>
+                    <!-- Adicione mais opções conforme necessário -->
+                </select>
+                <select id="ano">
+                    <option value="">Ano</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <!-- Adicione mais opções conforme necessário -->
+                </select>
+                <select id="turno">
+                    <option value="">Turno</option>
+                    <option value="1">1° Turno</option>
+                    <option value="2">2° Turno</option>
+                </select>
+                <select id="unidade">
+                    <option value="">Unidade Produtiva</option>
+                    <option value="1">UP-500</option>
+                    <option value="2">UP-501</option>
+                </select>
+            </div>
+            <button type="submit">Aplicar Filtros</button>
+        </form>
+    </section>
+
+    <section id="graficos">
+        <h2>Gráficos de Produção</h2>
+        
+        <div class="grafico" id="graficoProducao">
+            <h3>Meta X Realizado (Diário)</h3>
+            <canvas id="metaRealizadoChart"></canvas>
+        </div>
+
+        <div class="grafico" id="graficoDisponibilidade">
+            <h3>Disponibilidade (Diário)</h3>
+            <canvas id="disponibilidadeChart"></canvas>
+        </div>
+
+        <div class="grafico" id="graficoParadas">
+            <h3>Paradas de Máquinas (minutos, Diário)</h3>
+            <canvas id="paradasChart"></canvas>
+        </div>
+
+        <div class="grafico" id="graficoEficiencia">
+            <h3>Eficiência da Máquina (Diário)</h3>
+            <canvas id="eficienciaChart"></canvas>
+        </div>
+
+        <div class="grafico" id="graficoMaquinasParadas">
+            <h3>Máquina com Mais Minutos Parados</h3>
+            <canvas id="maquinasParadasChart"></canvas>
+        </div>
+
+        <div class="grafico" id="graficoMotivosParadas">
+            <h3>Principais Motivos de Parada</h3>
+            <canvas id="motivosParadasChart"></canvas>
+        </div>
+
+        
+        <!-- tabela-->
+        <div class="production-details">
+            <h2>Detalhes de Produção</h2>
+            <table class="dynamic-table">
+                <thead>
+                    <tr>
+                        <th>Hora Início</th>
+                        <th>Hora Fim</th>
+                        <th>Modelo</th>
+                        <th>Meta</th>
+                        <th>Realizado</th>
+                        <th>Dif</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08:00</td>
+                        <td>09:00</td>
+                        <td>Modelo A</td>
+                        <td>100</td>
+                        <td>90</td>
+                        <td>-10</td>
+                    </tr>
+                    <tr>
+                        <td>09:00</td>
+                        <td>10:00</td>
+                        <td>Modelo B</td>
+                        <td>150</td>
+                        <td>160</td>
+                        <td>+10</td>
+                    </tr>
+                    <tr>
+                        <td>10:00</td>
+                        <td>11:00</td>
+                        <td>Modelo C</td>
+                        <td>200</td>
+                        <td>180</td>
+                        <td>-20</td>
+                    </tr>
+                    <tr>
+                        <td>11:00</td>
+                        <td>12:00</td>
+                        <td>Modelo A</td>
+                        <td>120</td>
+                        <td>130</td>
+                        <td>+10</td>
+                    </tr>
+                    <tr>
+                        <td>12:00</td>
+                        <td>13:00</td>
+                        <td>Modelo B</td>
+                        <td>160</td>
+                        <td>150</td>
+                        <td>-10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
